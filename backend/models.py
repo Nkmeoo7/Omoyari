@@ -13,7 +13,6 @@ class JournalEntry(SQLModel, table=True):
     perspectives: Dict = Field(default={}, sa_column=Column(JSON))
     
     # Stores the Vector Embedding
-    # MAKE SURE THIS LINE ALIGNS WITH THE LINES ABOVE IT
     embedding: List[float] = Field(sa_column=Column(Vector(768)))
     
     created_at: datetime = Field(default_factory=datetime.utcnow)
